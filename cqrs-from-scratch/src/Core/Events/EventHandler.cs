@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Core.Events
+namespace CQRS.Events
 {
     public abstract class EventHandler<TEvent> : IEventHandler<TEvent> where TEvent : IEvent
     {

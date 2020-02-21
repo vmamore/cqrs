@@ -1,4 +1,4 @@
-﻿namespace Core.Commands
+﻿namespace CQRS.Commands
 {
     public interface ICommand
     {

@@ -1,10 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using CQRS.Dominio;
+using System.Threading.Tasks;
 
-namespace Core.Commands
+namespace CQRS.Commands
 {
     // Entender pra que serve o dispatcher
     public interface ICommandDispatcher
     {
-        Task<bool> ExecuteAsync<TCommand>(TCommand command) where TCommand : ICommand;
+        Task<Resultado> ExecuteAsync<TCommand>(TCommand command) where TCommand : ICommand;
     }
 }

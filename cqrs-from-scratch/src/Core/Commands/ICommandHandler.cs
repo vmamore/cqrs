@@ -1,10 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using CQRS.Dominio;
+using System.Threading.Tasks;
 
-namespace Core.Commands
+namespace CQRS.Commands
 {
     // Entender o in
     public interface ICommandHandler<in TCommand> where TCommand : ICommand
     {
-        Task<bool> ExecuteAsync(TCommand command);
+        Task<Resultado> ExecuteAsync(TCommand command);
     }
 }

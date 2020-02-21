@@ -1,7 +1,8 @@
-﻿using System;
+﻿using CQRS.Dominio;
+using System;
 using System.Threading.Tasks;
 
-namespace Core.Commands
+namespace CQRS.Commands
 {
     public class CommandDispatcher : ICommandDispatcher
     {
@@ -11,7 +12,7 @@ namespace Core.Commands
         {
             _dependencyResolver = dependencyResolver;
         }
-        public async Task<bool> ExecuteAsync<TCommand>(TCommand command) where TCommand : ICommand
+        public async Task<Resultado> ExecuteAsync<TCommand>(TCommand command) where TCommand : ICommand
         {
             if (command == null)
                 throw new ArgumentNullException(nameof(command));

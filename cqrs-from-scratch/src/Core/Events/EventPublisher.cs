@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Core.Events
+namespace CQRS.Events
 {
     public class EventPublisher : IEventPublisher
     {
