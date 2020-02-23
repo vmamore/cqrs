@@ -1,5 +1,6 @@
 ﻿using CQRS.Commands;
 using CQRS.Events;
+using CQRS.Queries;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CQRS
@@ -11,6 +12,7 @@ namespace CQRS
             services.AddSingleton<DependencyResolver>();
 
             services.AddSingleton<ICommandDispatcher, CommandDispatcher>();
+            services.AddSingleton<IQueryProcessor, QueryProcessor>();
             services.AddSingleton<IEventPublisher, EventPublisher>();
 
             return services;

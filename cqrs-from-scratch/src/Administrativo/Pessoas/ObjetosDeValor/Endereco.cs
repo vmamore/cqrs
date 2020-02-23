@@ -8,6 +8,8 @@ namespace Administrativo.Pessoas.ObjetosDeValor
         public string Numero { get; }
         public string CEP { get; }
 
+        protected Endereco() {}
+
         public Endereco(string logradouro, string numero, string cep)
         {
             Logradouro = logradouro;

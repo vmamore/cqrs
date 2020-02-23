@@ -4,4 +4,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Administrativo\Administrativo.csproj" />
+    <ProjectReference Include="..\Core\CQRS.csproj" />
+    <ProjectReference Include="..\Matricula\Atendimento.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CasosDeUso\Administrativo\Queries\" />
+  </ItemGroup>
+
 </Project>

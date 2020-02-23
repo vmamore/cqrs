@@ -1,4 +1,5 @@
 ﻿using Administrativo.Pessoas.Interfaces;
+using Administrativo.Pessoas.ObjetosDeValor;
 using CQRS.Dominio;
 using System.Threading.Tasks;
 
@@ -6,18 +7,18 @@ namespace Administrativo.Pessoas.Validacoes
 {
     public class PessoaDeveSerUnicaSpecification : SpecificationAsync
     {
-        private readonly IPessoaFisicaLeituraRepositorio _pessoaFisicaLeituraRepositorio;
-        private string CPF { get; }
+        private readonly IPessoaFisicaRepositorio _pessoaFisicaRepositorio;
+        private CPF CPF { get; }
 
-        public PessoaDeveSerUnicaSpecification(IPessoaFisicaLeituraRepositorio pessoaFisicaLeituraRepositorio, string cpf)
+        public PessoaDeveSerUnicaSpecification(IPessoaFisicaRepositorio pessoaFisicaRepositorio, CPF cpf)
         {
             CPF = cpf;
-            _pessoaFisicaLeituraRepositorio = pessoaFisicaLeituraRepositorio;
+            _pessoaFisicaRepositorio = pessoaFisicaRepositorio;
         }
 
         public override async Task<bool> EstaValido()
         {
-            var pessoa = await _pessoaFisicaLeituraRepositorio.ObterPorCPF(CPF);
+            var pessoa = await _pessoaFisicaRepositorio.ObterPorCPF(CPF);
             return pessoa == null;
         }
 

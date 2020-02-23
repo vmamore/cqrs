@@ -1,10 +1,19 @@
-﻿using System;
+﻿using CQRS.Commands;
+using System;
 
 namespace Application.CasosDeUso.Atendimento.Commands
 {
-    public class RealizarMatricula
+    public class RealizarMatricula : ICommand
     {
-        public Guid AlunoId { get; set; }
-        public Guid TurmaId { get; set; }
+        public Guid AlunoId { get; }
+        public Guid TurmaId { get; }
+
+        public RealizarMatricula(
+            Guid alunoId,
+            Guid turmaId)
+        {
+            AlunoId = alunoId;
+            TurmaId = turmaId;
+        }
     }
 }

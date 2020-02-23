@@ -1,5 +1,5 @@
 ﻿using Application.CasosDeUso.Administrativo.Commands;
-using Core.Commands;
+using CQRS.Commands;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using WebApi.Input.Administrativo;

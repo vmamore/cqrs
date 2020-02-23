@@ -1,4 +1,4 @@
-﻿using Core.Commands;
+﻿using CQRS.Commands;
 using System;
 
 namespace Application.CasosDeUso.Administrativo.Commands

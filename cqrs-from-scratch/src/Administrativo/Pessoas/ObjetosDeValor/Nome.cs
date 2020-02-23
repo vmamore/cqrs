@@ -6,6 +6,8 @@ namespace Administrativo.Pessoas.ObjetosDeValor
     {
         public string Texto { get; }
 
+        protected Nome() {}
+
         public Nome(string texto)
         {
             Texto = texto;

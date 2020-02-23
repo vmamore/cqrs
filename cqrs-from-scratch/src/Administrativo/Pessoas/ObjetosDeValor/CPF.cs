@@ -6,6 +6,8 @@ namespace Administrativo.Pessoas.ObjetosDeValor
     {
         public string Numero { get; }
 
+        protected CPF() {}
+
         public CPF(string numero)
         {
             Numero = numero;
