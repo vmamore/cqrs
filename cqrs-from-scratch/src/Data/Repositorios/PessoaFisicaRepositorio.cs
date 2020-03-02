@@ -1,11 +1,13 @@
 ﻿using Administrativo.Pessoas;
 using Administrativo.Pessoas.Interfaces;
+using Administrativo.Pessoas.ObjetosDeValor;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Threading.Tasks;
 
 namespace Dados.Repositorios
 {
-    public class PessoaFisicaRepositorio : IPessoaFisicaEscritaRepositorio, IPessoaFisicaLeituraRepositorio
+    public class PessoaFisicaRepositorio : IPessoaFisicaRepositorio
     {
         private readonly Context _context;
         public PessoaFisicaRepositorio(Context context)
@@ -18,10 +20,16 @@ namespace Dados.Repositorios
             await _context.PessoasFisicas.AddAsync(pessoaFisica);
         }
 
-        public async Task<PessoaFisica> ObterPorCPF(string cpf)
+        public async Task<PessoaFisica> ObterPorCPF(CPF cpf)
         {
             return await _context.PessoasFisicas
-                .SingleOrDefaultAsync(pf => pf.CPF.Numero.Equals(cpf));
+                .SingleOrDefaultAsync(pf => pf.CPF.Equals(cpf));
+        }
+
+        public async Task<PessoaFisica> ObterPorId(Guid id)
+        {
+            return await _context.PessoasFisicas
+                .SingleOrDefaultAsync(pf => pf.Id == id);
         }
     }
 }

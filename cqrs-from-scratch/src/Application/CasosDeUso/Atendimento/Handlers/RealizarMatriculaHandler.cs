@@ -1,8 +1,8 @@
 ﻿using Administrativo.Pessoas.Interfaces;
-using Application.Servicos;
 using Atendimento.Matriculas.Interfaces;
 using CQRS.Commands;
 using CQRS.Dominio;
+using Dados;
 using System.Threading.Tasks;
 
 namespace Application.CasosDeUso.Atendimento.Commands

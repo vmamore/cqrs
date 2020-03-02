@@ -1,4 +1,6 @@
 ﻿using Administrativo.Pessoas;
+using Atendimento.Matriculas;
+using Dados.Queries.Atendimento.ModeloDeLeitura;
 using Microsoft.EntityFrameworkCore;
 
 namespace Dados
@@ -6,10 +8,19 @@ namespace Dados
     public class Context : DbContext
     {
         public DbSet<PessoaFisica> PessoasFisicas { get; set; }
+        public DbSet<Turma> Turmas { get; set; }
+        public DbSet<Matricula> Matriculas { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public DbSet<AlunosPorTurmaListItem> AlunosPorTurma { get; set; }
+
+        public Context(DbContextOptions options) : base(options)
         {
-            optionsBuilder.UseInMemoryDatabase("context");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<AlunosPorTurmaListItem>().HasNoKey();
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(Context).Assembly);
         }
     }
 }

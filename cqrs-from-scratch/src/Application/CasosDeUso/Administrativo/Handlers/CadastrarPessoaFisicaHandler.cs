@@ -1,9 +1,9 @@
 ﻿using Administrativo.Pessoas.Interfaces;
 using Administrativo.Pessoas.Validacoes;
 using Application.CasosDeUso.Administrativo.Commands;
-using Application.Servicos;
 using CQRS.Commands;
 using CQRS.Dominio;
+using Dados;
 using System.Threading.Tasks;
 
 namespace Application.CasosDeUso.Administrativo.Handlers

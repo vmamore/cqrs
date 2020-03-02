@@ -1,7 +1,7 @@
-﻿using Application.Servicos;
-using Atendimento.Matriculas.Eventos;
+﻿using Atendimento.Matriculas.Eventos;
 using Atendimento.Matriculas.Interfaces;
 using CQRS.Events;
+using Dados;
 using System.Threading.Tasks;
 
 namespace Application.CasosDeUso.Atendimento.Handlers.Eventos

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Administrativo\Administrativo.csproj" />
+    <ProjectReference Include="..\Core\CQRS.csproj" />
+    <ProjectReference Include="..\Data\Dados.csproj" />
+    <ProjectReference Include="..\Matricula\Atendimento.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CasosDeUso\Administrativo\Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="8.0.1" />
+  </ItemGroup>
+
+</Project>

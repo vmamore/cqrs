@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra", "Infra", "{6C9056E3
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CQRS", "src\Core\CQRS.csproj", "{8DC7D6C1-729B-45FB-A37B-C7D109187304}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dados", "src\Data\Dados.csproj", "{E78E4205-DF45-42A4-B7E8-41670DFBAE3F}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dominio", "Dominio", "{61A71473-9EB5-4991-B832-DA7BE47EDD45}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atendimento", "src\Matricula\Atendimento.csproj", "{F51DD36D-DA0B-4660-BF30-07C1A72FBBCC}"
@@ -16,8 +18,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplicacoes", "Aplicacoes", "{A03225D0-0DE0-4D55-A143-6B310B1B7152}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\Application\Application.csproj", "{D6DFB38F-102F-4537-916D-41DE04E24DFD}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dados", "Data\Dados.csproj", "{E78E4205-DF45-42A4-B7E8-41670DFBAE3F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apresentacao", "Apresentacao", "{2F3BE9ED-B2EB-4870-B01B-CA1E3042D00D}"
 EndProject

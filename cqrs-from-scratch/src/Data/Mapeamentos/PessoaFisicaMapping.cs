@@ -14,12 +14,14 @@ namespace Dados.Mapeamentos
             builder.Property(pf => pf.Nome)
                 .HasConversion(
                 _ => _.Texto,
-                texto => new Nome(texto));
+                texto => new Nome(texto))
+                .IsRequired();
 
             builder.Property(pf => pf.CPF)
                 .HasConversion(
                 _ => _.Numero,
-                cpf => new CPF(cpf));
+                numero => new CPF(numero))
+                .IsRequired();
 
             builder.OwnsOne(pf => pf.Endereco);
         }

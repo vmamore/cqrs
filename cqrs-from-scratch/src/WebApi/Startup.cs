@@ -2,12 +2,15 @@ using Application.CasosDeUso.Administrativo.Commands;
 using Application.CasosDeUso.Administrativo.Handlers;
 using Application.CasosDeUso.Atendimento.Commands;
 using Application.CasosDeUso.Atendimento.Handlers.Eventos;
+using Application.CasosDeUso.Atendimento.Handlers.Queries;
 using Atendimento.Matriculas.Eventos;
 using CQRS;
 using CQRS.Commands;
 using CQRS.Events;
+using CQRS.Queries;
 using Dados;
 using Dados.Extensoes;
+using Dados.Queries.Atendimento.ModeloDeLeitura;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +18,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System.Collections.Generic;
 
 namespace WebApi
 {
@@ -43,6 +47,7 @@ namespace WebApi
             services.RegistrarDependenciasDoCQRS();
             services.AddTransient<ICommandHandler<CadastrarPessoaFisica>, CadastrarPessoaFisicaHandler>();
             services.AddTransient<ICommandHandler<RealizarMatricula>, RealizarMatriculaHandler>();
+            services.AddTransient<IQueryHandler<TurmasEAlunosQuery, IEnumerable<AlunosPorTurmaListItem>>, TurmasEAlunosQueryHandler>();
             services.AddTransient<IEventHandler<MatriculaRealizadaComSucesso>, MatriculaRealizadaComSucessoHandler>();
             services.AddControllers();
         }
