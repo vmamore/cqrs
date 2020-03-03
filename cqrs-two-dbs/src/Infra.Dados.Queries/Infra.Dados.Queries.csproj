@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\Infra.CQRS.csproj" />
+    <ProjectReference Include="..\Data\Infra.Dados.SqlStorage.csproj" />
+  </ItemGroup>
+
+</Project>

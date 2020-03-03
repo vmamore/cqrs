@@ -1,8 +1,8 @@
 ﻿using Administrativo.Pessoas.Interfaces;
 using Administrativo.Pessoas.Validacoes;
 using Application.CasosDeUso.Administrativo.Commands;
-using Application.Servicos;
 using CQRS.Dominio;
+using Dados;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;

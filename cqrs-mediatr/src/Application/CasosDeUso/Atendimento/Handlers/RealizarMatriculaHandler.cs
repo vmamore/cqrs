@@ -1,7 +1,7 @@
 ﻿using Administrativo.Pessoas.Interfaces;
-using Application.Servicos;
 using Atendimento.Matriculas.Interfaces;
 using CQRS.Dominio;
+using Dados;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;

@@ -10,10 +10,10 @@ namespace WebApi.Controllers
     [ApiController]
     public class MatriculaController : ControllerBase
     {
-        private readonly Mediator _mediator;
+        private readonly IMediator _mediator;
 
         public MatriculaController(
-            Mediator mediator)
+            IMediator mediator)
         {
             _mediator = mediator;
         }

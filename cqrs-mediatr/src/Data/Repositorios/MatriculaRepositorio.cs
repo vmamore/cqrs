@@ -1,6 +1,6 @@
 ﻿using Atendimento.Matriculas;
 using Atendimento.Matriculas.Interfaces;
-using CQRS.Events;
+using MediatR;
 using System;
 using System.Threading.Tasks;
 
@@ -9,14 +9,14 @@ namespace Dados.Repositorios
     public class MatriculaRepositorio : IMatriculaRepositorio
     {
         private readonly Context _context;
-        private readonly IEventPublisher _eventPublisher;
+        private readonly IMediator _mediatr;
 
         public MatriculaRepositorio(
             Context context,
-            IEventPublisher eventPublisher)
+            IMediator mediatr)
         {
             _context = context;
-            _eventPublisher = eventPublisher;
+            _mediatr = mediatr;
         }
 
         public void AtualizarTurma(Turma turma)
@@ -35,7 +35,7 @@ namespace Dados.Repositorios
 
             foreach(var evento in matricula.Eventos)
             {
-                await _eventPublisher.PublishAsync((dynamic)evento);
+                await _mediatr.Publish(evento);
             }
         }
     }
