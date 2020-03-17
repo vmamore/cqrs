@@ -9,6 +9,7 @@
     <ProjectReference Include="..\Core\Infra.CQRS.csproj" />
     <ProjectReference Include="..\Data\Infra.Dados.SqlStorage.csproj" />
     <ProjectReference Include="..\Infra.Dados.Queries\Infra.Dados.Queries.csproj" />
+    <ProjectReference Include="..\Infra.RabbitMQ.Produtor\Infra.RabbitMQ.Produtor.csproj" />
     <ProjectReference Include="..\Matricula\Atendimento.csproj" />
   </ItemGroup>
 

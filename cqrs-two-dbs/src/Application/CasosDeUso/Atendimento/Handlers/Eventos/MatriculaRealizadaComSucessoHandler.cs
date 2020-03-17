@@ -1,4 +1,4 @@
-﻿using Atendimento.Matriculas.Eventos;
+﻿ using Atendimento.Matriculas.Eventos;
 using Atendimento.Matriculas.Interfaces;
 using CQRS;
 using System.Threading;

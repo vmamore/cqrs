@@ -2,16 +2,17 @@
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
+using System.Collections.Generic;
 using System.Text;
 
-namespace Infra.RabbitMQ.Consumidor
+namespace Infra.RabbitMQ.Worker.Consumidor
 {
     public class RabbitMQConsumidor<T> where T : class
     {
         private ConnectionFactory _connectionFactory = new ConnectionFactory
         {
             HostName = "localhost",
-            Port = 15672,
+            Port = 5672,
             UserName = "guest",
             Password = "guest"
         };

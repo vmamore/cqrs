@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>dotnet-Infra.RabbitMQ.Worker.Consumidor-32F48484-8791-4751-BB69-C16269961833</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.30" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.0.0-pre9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\src\Data\Infra.Dados.SqlStorage.csproj" />
+  </ItemGroup>
+</Project>

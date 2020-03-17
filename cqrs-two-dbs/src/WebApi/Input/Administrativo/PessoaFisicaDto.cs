@@ -6,6 +6,7 @@ namespace WebApi.Input.Administrativo
     {
         public string Nome { get; set; }
         public string CPF { get; set; }
+        public string Email { get; set; }
         public DateTime DataDeNascimento { get; set; }
         public string Logradouro { get; set; }
         public string Numero { get; set; }

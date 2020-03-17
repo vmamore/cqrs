@@ -1,25 +1,24 @@
-﻿using CQRS;
-using System;
+﻿using System;
 
-namespace Administrativo.Pessoas.Eventos
+namespace Infra.RabbitMQ.Consumidor.PessoaFisica
 {
-    public class PessoaFisicaCriada : IEvent
+    public class PessoaFisicaData
     {
         public Guid PessoaId { get; }
         public string Nome { get; set; }
         public string Email { get; set; }
         public DateTime DataDeNascimento { get; set; }
         public string Logradouro { get; set; }
-        public string Numero { get; set; }
+        public int Numero { get; set; }
         public string CEP { get; set; }
 
-        public PessoaFisicaCriada(
+        public PessoaFisicaData(
             Guid pessoaId,
             string nome,
             string email,
             DateTime dataDeNascimento,
             string logradouro,
-            string numero,
+            int numero,
             string cep)
         {
             PessoaId = pessoaId;

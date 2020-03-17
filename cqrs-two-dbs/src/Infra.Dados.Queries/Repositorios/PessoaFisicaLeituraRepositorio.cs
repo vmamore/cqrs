@@ -26,12 +26,14 @@ namespace Infra.Dados.Queries.Repositorios
                 var cpf = cpfVo.Numero;
                 connection.Open();
 
-                var pessoaFisicaDto = await connection.QueryFirstOrDefaultAsync<Modelos.PessoaFisica>("SELECT * FROM [dbo].PessoasFisicas Where CPF = @cpf", new { cpf });
+                var pessoaFisicaDto = await connection.QueryFirstOrDefaultAsync<Modelos.PessoaFisica>("SELECT * FROM [dbo].[pessoa_fisica] Where CPF = @cpf", new { cpf });
 
                 if (pessoaFisicaDto == null) return null;
 
-                return _pessoaFisicaFactory.CriarNovaPessoa(pessoaFisicaDto.Nome,
+                return _pessoaFisicaFactory.CriarNovaPessoa(
+                    pessoaFisicaDto.Nome,
                     pessoaFisicaDto.CPF,
+                    pessoaFisicaDto.Email,
                     pessoaFisicaDto.DataDeNascimento,
                     string.Empty,
                     string.Empty,
@@ -45,10 +47,12 @@ namespace Infra.Dados.Queries.Repositorios
             {
                 connection.Open();
 
-                var pessoaFisicaDto = await connection.QueryFirstOrDefaultAsync<Modelos.PessoaFisica>("SELECT * FROM [dbo].PessoasFisicas Where Id = @id", new { id });
+                var pessoaFisicaDto = await connection.QueryFirstOrDefaultAsync<Modelos.PessoaFisica>("SELECT * FROM [dbo].[pessoa_fisica] Where Id = @id", new { id });
 
-                return _pessoaFisicaFactory.CriarNovaPessoa(pessoaFisicaDto.Nome,
+                return _pessoaFisicaFactory.CriarNovaPessoa(
+                    pessoaFisicaDto.Nome,
                     pessoaFisicaDto.CPF,
+                    pessoaFisicaDto.Email,
                     pessoaFisicaDto.DataDeNascimento,
                     string.Empty,
                     string.Empty,

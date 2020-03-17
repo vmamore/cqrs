@@ -25,6 +25,7 @@ namespace WebApi.Controllers
                 new CadastrarPessoaFisica(
                     dto.CPF,
                     dto.Nome,
+                    dto.Email,
                     dto.DataDeNascimento,
                     dto.Logradouro,
                     dto.CEP,
